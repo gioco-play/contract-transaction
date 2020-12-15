@@ -1,5 +1,5 @@
 {
-    "name": "gioco-play/contract-transaction",
+    "name": "gioco-play/transaction-contract",
     "description": "Transaction Interface",
     "type": "library",
     "license": "MIT",

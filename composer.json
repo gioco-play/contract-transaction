@@ -1,0 +1,13 @@
+{
+    "name": "gioco-play/contract-transaction",
+    "description": "Transaction Interface",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Xuan Yang",
+            "email": "xuan.yang@goldenf.co"
+        }
+    ],
+    "require": {}
+}

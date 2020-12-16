@@ -13,7 +13,7 @@ interface TransactionServiceInterface {
      * @param string $wallet_code
      * @return array
      */
-    function balance(string $account_with_op, string $delimiter, string $wallet_code): array;
+    function getBalance(string $account_with_op, string $delimiter, string $wallet_code): array;
     /**
      * 上分
      * @param string $account_with_op

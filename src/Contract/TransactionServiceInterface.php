@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace GiocoPlay\Transaction;
+namespace GiocoPlay\Contract;
 /**
  * 交易
  */

@@ -9,5 +9,10 @@
             "email": "xuan.yang@goldenf.co"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "GiocoPlus\\Transaction\\": "src/"
+        }
+    },
     "require": {}
 }

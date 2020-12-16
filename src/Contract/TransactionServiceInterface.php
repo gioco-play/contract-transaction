@@ -4,7 +4,7 @@ namespace GiocoPlay\Transaction;
 /**
  * 交易
  */
-interface Contract {
+interface TransactionServiceInterface {
 
     /**
      * 錢包餘額

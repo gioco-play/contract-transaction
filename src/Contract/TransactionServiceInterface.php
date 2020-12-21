@@ -108,5 +108,14 @@ interface TransactionServiceInterface {
      * @return array
      */
     function adjust(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $memo): array;
+
+    /**
+     * 查詢訂單
+     * @param string $account_with_op
+     * @param string $delimiter
+     * @param string $trace_id
+     * @return array
+     */
+    function queryOrder(string $account_with_op, string $delimiter, string $trace_id): array;
 }
 

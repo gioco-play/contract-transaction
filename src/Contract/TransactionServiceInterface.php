@@ -37,22 +37,26 @@ interface TransactionServiceInterface {
     /**
      * 遊戲上分
      * @param string $account_with_op
+     * @param string $delimiter
      * @param string $wallet_code
      * @param float $amount
      * @param string $trace_id
+     * @param string $bet_id
      * @return array
      */
-    function gameTransferIn(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id): array;
+    function gameTransferIn(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id): array;
 
     /**
      * 遊戲下分
      * @param string $account_with_op
+     * @param string $delimiter
      * @param string $wallet_code
      * @param float $amount
      * @param string $trace_id
+     * @param string $bet_id
      * @return array
      */
-    function gameTransferOut(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id): array;
+    function gameTransferOut(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id): array;
 
     /**
      * 下注

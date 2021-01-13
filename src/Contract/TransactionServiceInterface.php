@@ -78,7 +78,7 @@ interface TransactionServiceInterface {
      * @param string $bet_id
      * @return array
      */
-    function gamePayoff(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id): array;
+    function gamePayoff(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id, bool $check_stake = true): array;
 
     /**
      * 取消下注
@@ -89,7 +89,7 @@ interface TransactionServiceInterface {
      * @param string $bet_id
      * @return array
      */
-    function cancelStake(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id): array;
+    function cancelStake(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id, bool $check_stake = true): array;
 
     /**
      * 取消派彩

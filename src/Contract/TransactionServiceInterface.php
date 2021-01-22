@@ -121,5 +121,17 @@ interface TransactionServiceInterface {
      * @return array
      */
     function queryOrder(string $account_with_op, string $delimiter, string $trace_id): array;
+
+    /**
+     * 幣值換算
+     *
+     * @param string $account_with_op
+     * @param string $delimiter
+     * @param string $wallet_code
+     * @param float $amount
+     * @return mixed
+     */
+    function exchangeRate(string $account_with_op, string $delimiter, string $wallet_code, float $amount);
+
 }
 

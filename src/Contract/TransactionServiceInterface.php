@@ -132,6 +132,13 @@ interface TransactionServiceInterface {
      * @return mixed
      */
     function exchangeRate(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $operator);
+    
+    /**
+     * 遊戲商交易逾時
+     * @param array $orderData
+     * @return mixed
+    */
+    function vendorTimeoutLog(array $order_data);
 
 }
 

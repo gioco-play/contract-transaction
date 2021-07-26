@@ -69,7 +69,6 @@ interface TransactionServiceInterface {
     function gameTransferOut(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id): array;
 
     /**
-     * @deprecated
      * 下注
      * @param string $account_with_op
      * @param string $delimiter
@@ -96,7 +95,6 @@ interface TransactionServiceInterface {
     function gameStakeWithBetlog(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id, array $betlog, bool $allow_balance_minus = false): array;
 
     /**
-     * @deprecated
      * 派彩
      * 
      * @param string $account_with_op
@@ -126,7 +124,6 @@ interface TransactionServiceInterface {
     function gamePayoffWithBetlog(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id, array $betlog, bool $check_stake = true): array;
 
     /**
-     * @deprecated
      * 取消下注
      * 
      * @param string $account_with_op
@@ -154,7 +151,6 @@ interface TransactionServiceInterface {
     function cancelStakeWithBetlog(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id, array $betlog, bool $check_stake = true): array;
 
     /**
-     * @deprecated
      * 取消派彩
      * 
      * @param string $account_with_op

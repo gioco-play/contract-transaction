@@ -69,6 +69,7 @@ interface TransactionServiceInterface {
     function gameTransferOut(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id): array;
 
     /**
+     * @deprecated
      * 下注
      * @param string $account_with_op
      * @param string $delimiter
@@ -82,7 +83,22 @@ interface TransactionServiceInterface {
     function gameStake(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id, bool $allow_balance_minus = false): array;
 
     /**
+     * 下注(帶投注紀錄)
+     *
+     * @param string $account_with_op
+     * @param string $delimiter
+     * @param string $wallet_code
+     * @param float $amount
+     * @param array $betlog
+     * @param boolean $allow_balance_minus
+     * @return array
+     */
+    function gameStakeWithBetlog(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id, array $betlog, bool $allow_balance_minus = false): array;
+
+    /**
+     * @deprecated
      * 派彩
+     * 
      * @param string $account_with_op
      * @param string $delimiter
      * @param string $wallet_code
@@ -95,7 +111,24 @@ interface TransactionServiceInterface {
     function gamePayoff(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id, bool $check_stake = true): array;
 
     /**
+     * 派彩(帶投注紀錄)
+     *
+     * @param string $account_with_op
+     * @param string $delimiter
+     * @param string $wallet_code
+     * @param float $amount
+     * @param string $trace_id
+     * @param string $bet_id
+     * @param array $betlog
+     * @param boolean $check_stake
+     * @return array
+     */
+    function gamePayoffWithBetlog(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id, array $betlog, bool $check_stake = true): array;
+
+    /**
+     * @deprecated
      * 取消下注
+     * 
      * @param string $account_with_op
      * @param string $wallet_code
      * @param float $amount
@@ -106,7 +139,24 @@ interface TransactionServiceInterface {
     function cancelStake(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id, bool $check_stake = true): array;
 
     /**
+     * 取消下注(帶投注紀錄)
+     *
+     * @param string $account_with_op
+     * @param string $delimiter
+     * @param string $wallet_code
+     * @param float $amount
+     * @param string $trace_id
+     * @param string $bet_id
+     * @param array $betlog
+     * @param boolean $check_stake
+     * @return array
+     */
+    function cancelStakeWithBetlog(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id, array $betlog, bool $check_stake = true): array;
+
+    /**
+     * @deprecated
      * 取消派彩
+     * 
      * @param string $account_with_op
      * @param string $wallet_code
      * @param float $amount
@@ -115,6 +165,20 @@ interface TransactionServiceInterface {
      * @return array
      */
     function cancelPayoff(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id): array;
+
+    /**
+     * 取消派彩(帶投注紀錄)
+     *
+     * @param string $account_with_op
+     * @param string $delimiter
+     * @param string $wallet_code
+     * @param float $amount
+     * @param string $trace_id
+     * @param string $bet_id
+     * @param array $betlog
+     * @return array
+     */
+    function cancelPayoffWithBetlog(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id, array $betlog): array;
 
     /**
      * 調整資金

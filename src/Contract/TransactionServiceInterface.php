@@ -27,6 +27,7 @@ interface TransactionServiceInterface {
     /**
      * 上分
      * @param string $account_with_op
+     * @param string $delimiter
      * @param string $wallet_code
      * @param float $amount
      * @param string $trace_id
@@ -37,6 +38,7 @@ interface TransactionServiceInterface {
     /**
      * 下分
      * @param string $account_with_op
+     * @param string $delimiter
      * @param string $wallet_code
      * @param float $amount
      * @param string $trace_id
@@ -88,6 +90,8 @@ interface TransactionServiceInterface {
      * @param string $delimiter
      * @param string $wallet_code
      * @param float $amount
+     * @param string $trace_id
+     * @param string $bet_id
      * @param array $betlog
      * @param boolean $allow_balance_minus
      * @return array
@@ -96,7 +100,7 @@ interface TransactionServiceInterface {
 
     /**
      * 派彩
-     * 
+     *
      * @param string $account_with_op
      * @param string $delimiter
      * @param string $wallet_code
@@ -125,12 +129,14 @@ interface TransactionServiceInterface {
 
     /**
      * 取消下注
-     * 
+     *
      * @param string $account_with_op
+     * @param string $delimiter
      * @param string $wallet_code
      * @param float $amount
      * @param string $trace_id
      * @param string $bet_id
+     * @param bool $check_stake
      * @return array
      */
     function cancelStake(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id, bool $check_stake = true): array;
@@ -152,8 +158,9 @@ interface TransactionServiceInterface {
 
     /**
      * 取消派彩
-     * 
+     *
      * @param string $account_with_op
+     * @param string $delimiter
      * @param string $wallet_code
      * @param float $amount
      * @param string $trace_id
@@ -179,6 +186,7 @@ interface TransactionServiceInterface {
     /**
      * 調整資金
      * @param string $account_with_op
+     * @param string $delimiter
      * @param string $wallet_code
      * @param float $amount
      * @param string $trace_id
@@ -206,12 +214,12 @@ interface TransactionServiceInterface {
      * @return mixed
      */
     function exchangeRate(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $operator);
-    
+
     /**
      * 遊戲商交易逾時
      * @param array $orderData
      * @return mixed
-    */
+     */
     function vendorTimeoutLog(array $orderData);
 
 }

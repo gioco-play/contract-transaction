@@ -177,6 +177,33 @@ interface TransactionServiceInterface {
     function cancelPayoffWithBetlog(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id, array $betlog): array;
 
     /**
+     * 下注派彩（帶投注紀錄）
+     *
+     * @param string $account_with_op
+     * @param string $delimiter
+     * @param string $wallet_code
+     * @param $stake
+     * @param $payoff
+     * @param bool $check_stake
+     * @return array
+     */
+    function stakePayoffWithBetlog(string $account_with_op, string $delimiter, string $wallet_code, $stake, $payoff, bool $check_stake = true): array;
+
+
+    /**
+     * 下注取消下注（帶投注紀錄）
+     *
+     * @param string $account_with_op
+     * @param string $delimiter
+     * @param string $wallet_code
+     * @param $stake
+     * @param $cancel_stake
+     * @param bool $check_stake
+     * @return array
+     */
+    function stakeCancelStakeWithBetlog(string $account_with_op, string $delimiter, string $wallet_code, $stake, $cancel_stake, bool $check_stake = true): array;
+
+    /**
      * 調整資金
      * @param string $account_with_op
      * @param string $wallet_code

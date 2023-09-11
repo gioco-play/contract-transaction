@@ -96,7 +96,7 @@ interface TransactionServiceInterface {
 
     /**
      * 派彩
-     * 
+     *
      * @param string $account_with_op
      * @param string $delimiter
      * @param string $wallet_code
@@ -125,7 +125,7 @@ interface TransactionServiceInterface {
 
     /**
      * 取消下注
-     * 
+     *
      * @param string $account_with_op
      * @param string $wallet_code
      * @param float $amount
@@ -152,7 +152,7 @@ interface TransactionServiceInterface {
 
     /**
      * 取消派彩
-     * 
+     *
      * @param string $account_with_op
      * @param string $wallet_code
      * @param float $amount
@@ -177,7 +177,7 @@ interface TransactionServiceInterface {
     function cancelPayoffWithBetlog(string $account_with_op, string $delimiter, string $wallet_code, float $amount, string $trace_id, string $bet_id, array $betlog): array;
 
     /**
-     * 下注派彩（帶投注紀錄）
+     * 下注、派彩（帶投注紀錄）
      *
      * @param string $account_with_op
      * @param string $delimiter
@@ -189,9 +189,8 @@ interface TransactionServiceInterface {
      */
     function stakePayoffWithBetlog(string $account_with_op, string $delimiter, string $wallet_code, $stake, $payoff, bool $check_stake = true): array;
 
-
     /**
-     * 下注取消下注（帶投注紀錄）
+     * 下注、取消下注（帶投注紀錄）
      *
      * @param string $account_with_op
      * @param string $delimiter
@@ -202,6 +201,32 @@ interface TransactionServiceInterface {
      * @return array
      */
     function stakeCancelStakeWithBetlog(string $account_with_op, string $delimiter, string $wallet_code, $stake, $cancel_stake, bool $check_stake = true): array;
+
+    /**
+     * 取消派彩、取消下注（帶投注紀錄）
+     *
+     * @param string $account_with_op
+     * @param string $delimiter
+     * @param string $wallet_code
+     * @param $cancel_payoff
+     * @param $cancel_stake
+     * @param bool $check_stake
+     * @return array
+     */
+    function cancelPayoffCancelStakeWithBetlog(string $account_with_op, string $delimiter, string $wallet_code, $cancel_payoff, $cancel_stake, bool $check_stake = true): array;
+
+    /**
+     * 取消派彩、派彩（帶投注紀錄）
+     *
+     * @param string $account_with_op
+     * @param string $delimiter
+     * @param string $wallet_code
+     * @param $cancel_payoff
+     * @param $payoff
+     * @param bool $check_stake
+     * @return array
+     */
+    function cancelPayoffPayoffWithBetlog(string $account_with_op, string $delimiter, string $wallet_code, $cancel_payoff, $payoff, bool $check_stake = true): array;
 
     /**
      * 調整資金
